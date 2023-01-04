@@ -1,0 +1,31 @@
+<template>
+    <div class="flex flex-row pl-4 py-2 gap-2 items-center border rounded-lg shadow overflow-hidden bg-red-500">
+        <span class="flex-shrink-0 inline-flex mx-3 item-center justify-center leading-none rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-8 w-8">
+                <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </span>
+        <div class="flex-1 p-2">
+            <p class="text-sm text-white " _msthash="4749173" _msttexthash="73453562">您的账号密码有误,请检查</p>
+        </div>
+        <button type="button" class="ml-6 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"
+                @click="no_show">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+</template>
+
+<script setup>
+    import { appconfig } from '../../sotres/appConfig.js'
+    const sotres = appconfig()
+    function no_show() {
+        sotres.taggerError(1)
+    }
+
+</script>
